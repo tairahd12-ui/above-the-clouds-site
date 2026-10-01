@@ -1,9 +1,11 @@
 // TOPページのヒーロー動画プレイリスト。再生が終わると次の動画に自動で切り替わる。
 // 増やす場合はこの配列に { src, poster } を追加するだけでよい。
+// ルート相対パス(/から始まる)にしているのは、/en/ 配下のページからも
+// 同じ main.js を読み込んでおり、相対パスだとページの階層でずれるため。
 const HERO_CLIPS = [
-  { src: "assets/top/hero.mp4", poster: "assets/top/hero.jpg" },
-  { src: "assets/works/timberland-1.mp4", poster: "assets/works/timberland-1.jpg" },
-  { src: "assets/works/gshock-rei.mp4", poster: "assets/works/gshock-rei.jpg" },
+  { src: "/assets/top/hero.mp4", poster: "/assets/top/hero.jpg" },
+  { src: "/assets/works/timberland-1.mp4", poster: "/assets/works/timberland-1.jpg" },
+  { src: "/assets/works/gshock-rei.mp4", poster: "/assets/works/gshock-rei.jpg" },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
