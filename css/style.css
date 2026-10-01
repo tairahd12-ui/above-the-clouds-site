@@ -331,10 +331,6 @@ section {
   justify-content: center;
 }
 
-.media-frame.is-portrait {
-  aspect-ratio: 4 / 5;
-}
-
 .media-frame::before {
   content: "";
   position: absolute;
