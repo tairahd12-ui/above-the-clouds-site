@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | above the clouds</title>
+<meta name="description" content="above the clouds へのお問い合わせ・お見積り依頼はこちらから。映像制作に関するご相談を承っています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">above the <span>clouds</span></a>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">TOP</a>
+      <a href="about.html">About</a>
+      <a href="works.html">Works</a>
+      <a href="service.html">Service</a>
+      <a href="contact.html" class="nav-current">Contact</a>
+      <a href="contact.html" class="nav-cta">見積もりを依頼する</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Contact</p>
+      <h1 class="section-title">お問い合わせ</h1>
+      <p class="section-lead">映像制作のご相談・お見積り依頼は、下記フォームまたはInstagramよりお気軽にご連絡ください。</p>
+    </div>
+  </section>
+
+  <section class="mt-0" style="padding-top: 0;">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: start;">
+
+        <form class="form-grid" id="contact-form">
+          <div class="field">
+            <label for="service">お問い合わせ内容</label>
+            <select id="service" name="service" required>
+              <option value="">選択してください</option>
+              <option value="映像制作">映像制作のご相談・お見積り</option>
+              <option value="観光思い出映像">観光思い出映像について(準備中)</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="name">お名前</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="email">メールアドレス</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="company">会社名・屋号(任意)</label>
+            <input type="text" id="company" name="company">
+          </div>
+
+          <div class="field">
+            <label for="message">お問い合わせ内容詳細</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <p class="form-note">対応言語:日本語 / English / עברית</p>
+          <p class="form-note">送信するとメールアプリが起動し、内容が自動入力された状態でお問い合わせいただけます。</p>
+
+          <button type="submit" class="btn btn-solid" style="justify-self: start;">送信する</button>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <p class="label">Instagram</p>
+            <p><a href="https://www.instagram.com/taira_vzr/" target="_blank" rel="noopener">@taira_vzr</a></p>
+          </div>
+          <div class="contact-info-item">
+            <p class="label">対応言語</p>
+            <p>日本語 / English / עברית</p>
+          </div>
+          <div class="contact-info-item">
+            <p class="label">サービス</p>
+            <p>映像制作(ファッション / インタビュー / PR映像)<br>観光思い出映像(準備中)</p>
+          </div>
+          <div class="contact-info-item">
+            <p class="label">Note</p>
+            <p class="form-note">観光思い出映像サービスは現在準備中です。公開までお待ちいただくか、先行してご相談いただくことも可能です。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="logo">above the <span>clouds</span></div>
+    <nav class="footer-links">
+      <a href="about.html">About</a>
+      <a href="works.html">Works</a>
+      <a href="service.html">Service</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.instagram.com/taira_vzr/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
+  <div class="container footer-meta" style="margin-top: var(--space-2);">
+    &copy; <span data-year>2026</span> above the clouds
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

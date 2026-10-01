@@ -1,0 +1,96 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".site-header");
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  const onScroll = () => {
+    if (!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 10);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.textContent = "☰";
+      });
+    });
+  }
+
+  // Works filter
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const workItems = document.querySelectorAll(".work-item");
+  if (filterBtns.length && workItems.length) {
+    const applyFilter = (category) => {
+      workItems.forEach((item) => {
+        const match = category === "all" || item.dataset.category === category;
+        item.classList.toggle("is-visible", match);
+      });
+    };
+    applyFilter("all");
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        applyFilter(btn.dataset.filter);
+      });
+    });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    const q = item.querySelector(".faq-q");
+    const a = item.querySelector(".faq-a");
+    if (!q || !a) return;
+    a.style.display = "none";
+    q.addEventListener("click", () => {
+      const isOpen = a.style.display !== "none";
+      a.style.display = isOpen ? "none" : "block";
+      const mark = q.querySelector(".mark");
+      if (mark) mark.textContent = isOpen ? "+" : "−";
+    });
+  });
+
+  // Contact form (mailto fallback — no backend required)
+  const contactForm = document.querySelector("#contact-form");
+  if (contactForm) {
+    const CONTACT_EMAIL = "tairahd12@icloud.com";
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(contactForm);
+      const service = data.get("service") || "";
+      const name = data.get("name") || "";
+      const email = data.get("email") || "";
+      const company = data.get("company") || "";
+      const message = data.get("message") || "";
+
+      const subject = `【お問い合わせ】${service || "above the clouds"} - ${name}`;
+      const body = [
+        `お問い合わせ内容: ${service}`,
+        `お名前: ${name}`,
+        `メールアドレス: ${email}`,
+        `会社名・屋号: ${company}`,
+        "",
+        "お問い合わせ内容詳細:",
+        message,
+      ].join("\n");
+
+      const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  }
+
+  // Footer year
+  document.querySelectorAll("[data-year]").forEach((el) => {
+    el.textContent = String(new Date().getFullYear());
+  });
+});
