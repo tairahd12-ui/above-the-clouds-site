@@ -1,3 +1,11 @@
+// TOPページのヒーロー動画プレイリスト。再生が終わると次の動画に自動で切り替わる。
+// 増やす場合はこの配列に { src, poster } を追加するだけでよい。
+const HERO_CLIPS = [
+  { src: "assets/top/hero.mp4", poster: "assets/top/hero.jpg" },
+  { src: "assets/works/timberland-1.mp4", poster: "assets/works/timberland-1.jpg" },
+  { src: "assets/works/gshock-rei.mp4", poster: "assets/works/gshock-rei.jpg" },
+];
+
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
   const navToggle = document.querySelector(".nav-toggle");
@@ -86,6 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
+    });
+  }
+
+  // Hero video playlist
+  const heroVideo = document.querySelector("#hero-video");
+  if (heroVideo && HERO_CLIPS.length > 1) {
+    let heroIndex = 0;
+    heroVideo.addEventListener("ended", () => {
+      heroIndex = (heroIndex + 1) % HERO_CLIPS.length;
+      const clip = HERO_CLIPS[heroIndex];
+      heroVideo.setAttribute("poster", clip.poster);
+      heroVideo.src = clip.src;
+      heroVideo.play();
     });
   }
 
