@@ -947,18 +947,17 @@ section {
     font-size: 1rem;
   }
 
-  /* 絞り込み: 枠をなくした文字だけの1行。はみ出す分は横にスクロール */
+  /* 絞り込み: 枠をなくした文字だけ。画面幅に収まるよう折り返す(端で切れない) */
   .filter-bar {
-    flex-wrap: nowrap;
-    gap: 1.4rem;
-    overflow-x: auto;
-    margin: 0 calc(var(--space-3) * -1) var(--space-4);
-    padding: 0 var(--space-3) 0.4rem;
-    scrollbar-width: none;
+    gap: 0.5rem 1.4rem;
+    margin-bottom: var(--space-4);
   }
 
-  .filter-bar::-webkit-scrollbar {
-    display: none;
+  /* 見出しは言葉の途中で折り返さない。<wbr> の位置か空白でだけ改行し、行の長さをそろえる */
+  h1, h2, h3 {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
   }
 
   .filter-btn,
