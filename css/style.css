@@ -536,6 +536,13 @@ section {
   font-size: 1.15rem;
 }
 
+/* 編集・音のみ担当の作品(おまけ扱い)に添える小さな注記 */
+.work-note {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text-faint);
+}
+
 /* ---------- process steps ---------- */
 
 .steps {
@@ -897,6 +904,36 @@ section {
 
   .work-item .work-title {
     font-size: 1rem;
+  }
+
+  /* 絞り込み: 枠をなくした文字だけの1行。はみ出す分は横にスクロール */
+  .filter-bar {
+    flex-wrap: nowrap;
+    gap: 1.4rem;
+    overflow-x: auto;
+    margin: 0 calc(var(--space-3) * -1) var(--space-4);
+    padding: 0 var(--space-3) 0.4rem;
+    scrollbar-width: none;
+  }
+
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn,
+  .filter-btn:hover,
+  .filter-btn.is-active {
+    flex-shrink: 0;
+    padding: 0.3rem 0;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background: none;
+    white-space: nowrap;
+  }
+
+  .filter-btn.is-active {
+    color: var(--color-text);
+    border-bottom-color: var(--color-text);
   }
 
   /* Contact: フォームと連絡先の間に線と余白を入れ、小見出しをフォームと揃える */

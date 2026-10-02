@@ -2,10 +2,18 @@
 // 増やす場合はこの配列に { src, poster } を追加するだけでよい。
 // ルート相対パス(/から始まる)にしているのは、/en/ 配下のページからも
 // 同じ main.js を読み込んでおり、相対パスだとページの階層でずれるため。
+// 自然・空・雲を中心に、各作品の元の編集の「間」を残したまま2〜3カットずつ切り出したもの
+// (音声なし・軽量化済み)。MVは使わない(Tylerの指示)。
 const HERO_CLIPS = [
-  { src: "/assets/top/hero.mp4", poster: "/assets/top/hero.jpg" },
-  { src: "/assets/works/timberland-1.mp4", poster: "/assets/works/timberland-1.jpg" },
-  { src: "/assets/works/gshock-rei.mp4", poster: "/assets/works/gshock-rei.jpg" },
+  { src: "/assets/top/hero-01.mp4", poster: "/assets/top/hero-01.jpg" }, // Yabesian(車内→入道雲→車のドア)
+  { src: "/assets/top/hero-02.mp4", poster: "/assets/top/hero-02.jpg" }, // KEBOZ Look Film(屋上を歩く→立ち姿→黄色い花)
+  { src: "/assets/top/hero-03.mp4", poster: "/assets/top/hero-03.jpg" }, // KEBOZ Look Film 03(水面に映る雲→枝に触れる手→後ろ姿)
+  { src: "/assets/top/hero-04.mp4", poster: "/assets/top/hero-04.jpg" }, // memory of australia 冒頭(一本の木→岩場の足元)
+  { src: "/assets/top/hero-09.mp4", poster: "/assets/top/hero-09.jpg" }, // fingerj(窓辺の机→スイカの寄り→夕暮れの道と富士山)
+  { src: "/assets/top/hero-05.mp4", poster: "/assets/top/hero-05.jpg" }, // flatmood(草原を歩く→足元→寝転ぶ)
+  { src: "/assets/top/hero-06.mp4", poster: "/assets/top/hero-06.jpg" }, // fingerj(夕焼けの富士山と人→富士山→砂の上の手)
+  { src: "/assets/top/hero-07.mp4", poster: "/assets/top/hero-07.jpg" }, // KEBOZ Look Film 03(大きな木の下を歩く→ベンチ)
+  { src: "/assets/top/hero-08.mp4", poster: "/assets/top/hero-08.jpg" }, // memory of australia(水辺の木→森→海)
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -75,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Contact form (mailto fallback — no backend required)
   const contactForm = document.querySelector("#contact-form");
   if (contactForm) {
-    const CONTACT_EMAIL = "tairahd12@icloud.com";
+    const CONTACT_EMAIL = "abovetheclouds.creative365@gmail.com";
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const data = new FormData(contactForm);

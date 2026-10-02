@@ -22,7 +22,7 @@ above the clouds(Tylerのワンオペ映像制作。ファッション/インタ
 
 - 5ページ(index/about/works/service/contact)。ヘッダー・フッターは各ページに手書きで重複しているため、変更時は全ファイル更新
 - 英語版は`en/`に同じ5ページ。パスは`../`始まり。日本語版の内容(実績・料金など)を変えたら英語版も更新
-- `js/main.js`はJP/EN共通。`HERO_CLIPS`(TOPのヒーロー動画リスト)のパスは`/assets/...`のルート相対にする(相対だと`en/`で壊れる)。問い合わせフォームは`mailto:`方式(宛先は`CONTACT_EMAIL`)
+- `js/main.js`はJP/EN共通。`HERO_CLIPS`(TOPのヒーロー動画リスト)のパスは`/assets/...`のルート相対にする(相対だと`en/`で壊れる)。問い合わせフォームは`mailto:`方式(宛先は`CONTACT_EMAIL` = 事業用Gmail abovetheclouds.creative365@gmail.com)
 - `css/style.css`はCSS変数ベースでモノクロ方針。彩度の高い色を足さない。スマホ調整はファイル末尾の「mobile」ブロック
 - `assets/`はページ別(top/works/about)。動画には同名の`.jpg`ポスターを置き、Works/Aboutは`preload="none"`
 
