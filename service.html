@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261002q">
+<link rel="stylesheet" href="css/style.css?v=20261002r">
 </head>
 <body>
 
@@ -41,14 +41,23 @@
 
   <section class="mt-0" style="padding-top: 0;">
     <div class="container">
-      <div class="grid grid-3 service-types">
-        <div class="card">
+      <div class="grid service-types">
+        <div class="service-type">
+          <div class="media-frame" style="--r: 9 / 16;">
+            <video src="assets/service/type-fashion.mp4" poster="assets/service/type-fashion.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          </div>
           <h3>ファッション映像</h3>
         </div>
-        <div class="card">
+        <div class="service-type">
+          <div class="media-frame" style="--r: 9 / 16;">
+            <video src="assets/service/type-interview.mp4" poster="assets/service/type-interview.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          </div>
           <h3>インタビュー映像</h3>
         </div>
-        <div class="card">
+        <div class="service-type">
+          <div class="media-frame" style="--r: 9 / 16;">
+            <video src="assets/service/type-pr.mp4" poster="assets/service/type-pr.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          </div>
           <h3>PR映像</h3>
         </div>
       </div>
@@ -58,21 +67,34 @@
   <section>
     <div class="container">
       <h2 class="section-title">料金の目安</h2>
-      <div class="grid grid-3" style="margin-top: var(--space-4);">
-        <div class="card">
+      <div class="grid grid-3 plans" style="margin-top: var(--space-4);">
+        <div class="card plan">
+          <img class="plan-img" src="assets/service/plan-light.jpg" alt="KEBOZ Reelの一場面" loading="lazy">
           <h3>ライト</h3>
-          <p>単発撮影(1日)+基礎編集</p>
-          <p>¥50,000〜100,000</p>
+          <p class="plan-price">¥50,000〜100,000</p>
+          <ul class="plan-list">
+            <li>撮影1日</li>
+            <li>基礎編集</li>
+          </ul>
         </div>
-        <div class="card">
+        <div class="card plan">
+          <img class="plan-img" src="assets/service/plan-standard.jpg" alt="TIMBERLAND Campaign Film 05の一場面" loading="lazy">
           <h3>スタンダード</h3>
-          <p>企画+撮影(複数カット)+編集フルセット</p>
-          <p>¥80,000〜150,000</p>
+          <p class="plan-price">¥80,000〜150,000</p>
+          <ul class="plan-list">
+            <li>企画</li>
+            <li>撮影(複数カット)</li>
+            <li>編集フルセット</li>
+          </ul>
         </div>
-        <div class="card">
+        <div class="card plan">
+          <img class="plan-img" src="assets/service/plan-monthly.jpg" alt="FRED PERRY Digestの一場面" loading="lazy">
           <h3>継続契約(月別)</h3>
-          <p>月別業務委託・定期映像制作</p>
-          <p>時給¥3,000〜4,500</p>
+          <p class="plan-price">時給¥3,000〜4,500</p>
+          <ul class="plan-list">
+            <li>月別の業務委託</li>
+            <li>定期的な映像制作</li>
+          </ul>
         </div>
       </div>
       <p class="section-lead" style="margin-top: var(--space-3);">内容・規模により前後します。詳細はお問い合わせください。</p>
@@ -168,6 +190,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261002q"></script>
+<script src="js/main.js?v=20261002r"></script>
 </body>
 </html>

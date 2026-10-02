@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=20261002q">
+<link rel="stylesheet" href="../css/style.css?v=20261002r">
 </head>
 <body>
 
@@ -41,14 +41,23 @@
 
   <section class="mt-0" style="padding-top: 0;">
     <div class="container">
-      <div class="grid grid-3 service-types">
-        <div class="card">
+      <div class="grid service-types">
+        <div class="service-type">
+          <div class="media-frame" style="--r: 9 / 16;">
+            <video src="../assets/service/type-fashion.mp4" poster="../assets/service/type-fashion.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          </div>
           <h3>Fashion Video</h3>
         </div>
-        <div class="card">
+        <div class="service-type">
+          <div class="media-frame" style="--r: 9 / 16;">
+            <video src="../assets/service/type-interview.mp4" poster="../assets/service/type-interview.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          </div>
           <h3>Interview Video</h3>
         </div>
-        <div class="card">
+        <div class="service-type">
+          <div class="media-frame" style="--r: 9 / 16;">
+            <video src="../assets/service/type-pr.mp4" poster="../assets/service/type-pr.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          </div>
           <h3>PR Video</h3>
         </div>
       </div>
@@ -58,21 +67,34 @@
   <section>
     <div class="container">
       <h2 class="section-title">Pricing</h2>
-      <div class="grid grid-3" style="margin-top: var(--space-4);">
-        <div class="card">
+      <div class="grid grid-3 plans" style="margin-top: var(--space-4);">
+        <div class="card plan">
+          <img class="plan-img" src="../assets/service/plan-light.jpg" alt="A scene from KEBOZ Reel" loading="lazy">
           <h3>Light</h3>
-          <p>One-day shoot + basic editing</p>
-          <p>¥50,000〜100,000</p>
+          <p class="plan-price">¥50,000〜100,000</p>
+          <ul class="plan-list">
+            <li>One-day shoot</li>
+            <li>Basic editing</li>
+          </ul>
         </div>
-        <div class="card">
+        <div class="card plan">
+          <img class="plan-img" src="../assets/service/plan-standard.jpg" alt="A scene from TIMBERLAND Campaign Film 05" loading="lazy">
           <h3>Standard</h3>
-          <p>Planning + shooting (multiple shots) + full edit</p>
-          <p>¥80,000〜150,000</p>
+          <p class="plan-price">¥80,000〜150,000</p>
+          <ul class="plan-list">
+            <li>Planning</li>
+            <li>Shooting (multiple shots)</li>
+            <li>Full edit</li>
+          </ul>
         </div>
-        <div class="card">
+        <div class="card plan">
+          <img class="plan-img" src="../assets/service/plan-monthly.jpg" alt="A scene from FRED PERRY Digest" loading="lazy">
           <h3>Retainer (monthly)</h3>
-          <p>Ongoing monthly production work</p>
-          <p>¥3,000〜4,500 / hour</p>
+          <p class="plan-price">¥3,000〜4,500 / hour</p>
+          <ul class="plan-list">
+            <li>Monthly contract work</li>
+            <li>Ongoing video production</li>
+          </ul>
         </div>
       </div>
       <p class="section-lead" style="margin-top: var(--space-3);">Prices vary by scope. Please contact us for details.</p>
@@ -168,6 +190,6 @@
   </div>
 </footer>
 
-<script src="../js/main.js?v=20261002q"></script>
+<script src="../js/main.js?v=20261002r"></script>
 </body>
 </html>
