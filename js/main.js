@@ -80,35 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Contact form (mailto fallback — no backend required)
-  const contactForm = document.querySelector("#contact-form");
-  if (contactForm) {
-    const CONTACT_EMAIL = "abovetheclouds.creative365@gmail.com";
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const data = new FormData(contactForm);
-      const service = data.get("service") || "";
-      const name = data.get("name") || "";
-      const email = data.get("email") || "";
-      const company = data.get("company") || "";
-      const message = data.get("message") || "";
-
-      const subject = `【お問い合わせ】${service || "above the clouds"} - ${name}`;
-      const body = [
-        `お問い合わせ内容: ${service}`,
-        `お名前: ${name}`,
-        `メールアドレス: ${email}`,
-        `会社名・屋号: ${company}`,
-        "",
-        "お問い合わせ内容詳細:",
-        message,
-      ].join("\n");
-
-      const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-    });
-  }
-
   // Hero video playlist
   const heroVideo = document.querySelector("#hero-video");
   if (heroVideo && HERO_CLIPS.length > 1) {
