@@ -17,6 +17,13 @@ const HERO_CLIPS = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+  // 動画のダウンロードボタンと右クリック保存を隠す(URLを知る人の保存までは防げない)
+  document.querySelectorAll("video[controls]").forEach((v) => {
+    v.setAttribute("controlsList", "nodownload");
+    v.setAttribute("disablePictureInPicture", "");
+    v.addEventListener("contextmenu", (e) => e.preventDefault());
+  });
+
   const header = document.querySelector(".site-header");
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
