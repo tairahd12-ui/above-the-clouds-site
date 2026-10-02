@@ -56,7 +56,7 @@ GitHub: https://github.com/tairahd12-ui/above-the-clouds-site (公開リポジ�
 
 **英語版(`en/`)**: 2026-10-02に追加。同じ5ページを英訳して`en/`配下に複製している(`en/index.html`等)。アセット・CSS・JSへのパスは`../`始まりの相対パス。各ページのnavに「EN」/「日本語」の切り替えリンクを追加済み。日本語版を更新したら、内容に関わる変更は英語版にも反映すること(新しい実績・料金など)。`js/main.js`はJP/EN共通の1ファイルのため、`HERO_CLIPS`の`src`/`poster`はルート相対パス(`/assets/...`)にしてある — 相対パスに戻すと`en/`配下のページでヒーロー動画の自動切り替えが壊れるので注意。
 
-**`css/style.css`** — 単一のスタイルシート。CSS変数ベースのテーマ設計(ファイル冒頭の `:root` ブロック)。サイト全体はあえてモノクロ(白地に近黒の `--color-accent`)でまとめているデザイン方針なので、彩度の高いアクセントカラーを再度入れないこと。フォントはGoogle Fonts(見出し: Cormorant Garamond、本文: Zen Kaku Gothic New)を各ページの `<head>` 内 `<link>` で読み込んでいる。
+**`css/style.css`** — 単一のスタイルシート。CSS変数ベースのテーマ設計(ファイル冒頭の `:root` ブロック)。サイト全体はあえてモノクロ(白地に近黒の `--color-accent`)でまとめているデザイン方針なので、彩度の高いアクセントカラーを再度入れないこと。フォントはGoogle Fonts(見出し: Cormorant Garamond、本文: Zen Kaku Gothic New)を各ページの `<head>` 内 `<link>` で読み込んでいる。スマホ専用の調整はファイル末尾の「mobile」ブロックにまとめてある(2026-10-02)。CSS/JSは `?v=YYYYMMDD` 付きで読み込んでいるので、変更したら全HTMLの版番号を上げる。運用手順は `../.claude/skills/website-ops/SKILL.md`。
 
 **`js/main.js`** — モジュールやバンドラーを使わない単一ファイルで、全ページ共通。以下を担当:
 - ヘッダーのスクロール時スタイル切り替え、モバイルナビの開閉

@@ -521,6 +521,10 @@ section {
   display: flex;
 }
 
+.work-item .media-frame {
+  aspect-ratio: var(--r, 16 / 9);
+}
+
 .work-client {
   font-size: 0.72rem;
   letter-spacing: 0.15em;
@@ -793,4 +797,137 @@ section {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* ===========================================================
+   mobile — スマホ表示の統一(PC表示には影響しない)
+   =========================================================== */
+
+@media (max-width: 859px) {
+  /* backdrop-filter があると、position: fixed のメニューの基準が
+     ヘッダーになり、閉じたメニューがスクロール時に本文へ透けて出る。
+     モバイルでは使わず、不透明に近い白背景にする */
+  .site-header.is-scrolled {
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .nav-links {
+    visibility: hidden;
+    transition: transform 0.4s var(--ease), visibility 0s linear 0.4s;
+  }
+
+  .nav-links.is-open {
+    visibility: visible;
+    transition: transform 0.4s var(--ease);
+  }
+
+  .nav-links .nav-cta {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+@media (max-width: 639px) {
+  section {
+    padding: var(--space-5) 0;
+  }
+
+  .page-header {
+    padding: calc(var(--space-5) + 3rem) 0 var(--space-3);
+  }
+
+  .hero {
+    padding-bottom: var(--space-5);
+  }
+
+  .section-lead {
+    margin-bottom: var(--space-3);
+  }
+
+  /* ボタンは全幅・縦積みで統一 */
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .card {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  /* 制作の流れ: 番号を見出しの真上に置き、前のステップと混ざらないようにする */
+  .step {
+    padding-top: var(--space-2);
+  }
+
+  .step::before {
+    position: static;
+    display: block;
+    transform: none;
+    font-size: 1.3rem;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+  }
+
+  .person:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  /* Works: 作品の間をたっぷり空け、縦長動画は画面を埋めない高さに抑える */
+  .works-grid {
+    gap: var(--space-5);
+  }
+
+  .work-item {
+    gap: 0.9rem;
+  }
+
+  .work-item .media-frame {
+    width: min(100%, calc(58svh * var(--r, 16 / 9)));
+  }
+
+  .work-item .work-title {
+    font-size: 1rem;
+  }
+
+  /* Contact: フォームと連絡先の間に線と余白を入れ、小見出しをフォームと揃える */
+  .contact-info {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .contact-info-item .label {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--color-text-dim);
+  }
+
+  /* Service: 見出しだけの箱をやめ、細い線で区切った一行リストにする */
+  .service-types {
+    margin-top: var(--space-3);
+    gap: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .service-types .card {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.1rem 0;
+  }
+
+  .service-types .card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0;
+  }
 }

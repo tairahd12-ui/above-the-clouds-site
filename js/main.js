@@ -36,10 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Works filter
+  // Works filter(絞り込みボタンが無いページでは全作品を表示する)
   const filterBtns = document.querySelectorAll(".filter-btn");
   const workItems = document.querySelectorAll(".work-item");
-  if (filterBtns.length && workItems.length) {
+  if (!filterBtns.length) {
+    workItems.forEach((item) => item.classList.add("is-visible"));
+  } else if (workItems.length) {
     const applyFilter = (category) => {
       workItems.forEach((item) => {
         const match = category === "all" || item.dataset.category === category;
